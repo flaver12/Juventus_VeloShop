@@ -1,5 +1,7 @@
 package org.fk.vs.presentation;
 
+import java.util.List;
+
 import org.fk.vs.business.StorageService;
 import org.fk.vs.business.UserService;
 import org.fk.vs.business.VehicleService;
@@ -30,6 +32,11 @@ public class Main {
 
         // Reserve a vehicle
         StorageService storageService = new StorageService(vehicleService, userService);
-        storageService.reserveVehicle((Customer)userService.findUserById(2), null);
+        storageService.reserveVehicle((Customer)userService.findUserById(2), vehicleService.findVehicleById(1));
+        List<Vehicle> vehicles = storageService.getReservedVehicles();
+
+        for (Vehicle item : vehicles) {
+            System.out.println("Vehicle: " + item.getId());
+        }
    }
 }

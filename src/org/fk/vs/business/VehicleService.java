@@ -29,6 +29,11 @@ public class VehicleService {
         return this.vehicles;
     }
 
+    public Vehicle findVehicleById(int id)
+    {
+        return vehicles.stream().filter(item -> item.getId() == id).toList().get(0);
+    }
+
     public boolean doesVehicleExist(Vehicle vehicle) {
         return this.vehicles.contains(vehicle);
     }
