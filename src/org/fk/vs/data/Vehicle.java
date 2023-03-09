@@ -4,15 +4,21 @@ public class Vehicle {
     private Status status;
     private Type type;
     private int price;
+    private int id;
 
-    public Vehicle(Status status, Type type, int price) {
+    public Vehicle(int id, Status status, Type type, int price) {
         this.status = status;
         this.type = type;
         this.price = price;
+        this.id = id;
     }
 
     public int getPrice() {
         return price;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public Type getType() {

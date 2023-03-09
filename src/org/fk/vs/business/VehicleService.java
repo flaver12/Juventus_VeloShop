@@ -28,4 +28,8 @@ public class VehicleService {
     public List<Vehicle> getVehicles() {
         return this.vehicles;
     }
+
+    public boolean doesVehicleExist(Vehicle vehicle) {
+        return this.vehicles.contains(vehicle);
+    }
 }

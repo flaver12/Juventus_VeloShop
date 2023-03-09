@@ -1,5 +1,6 @@
 package org.fk.vs.presentation;
 
+import org.fk.vs.business.StorageService;
 import org.fk.vs.business.UserService;
 import org.fk.vs.business.VehicleService;
 import org.fk.vs.data.Customer;
@@ -14,14 +15,21 @@ public class Main {
 
         // Start up vehicle service
         VehicleService vehicleService = new VehicleService();
-        vehicleService.AddVehicle(new Vehicle(Status.Open, Type.CityBike, 2000));
-        vehicleService.AddVehicle(new Vehicle(Status.ReadyForPickUp, Type.MountainBike, 20056));
+        vehicleService.AddVehicle(new Vehicle(1, Status.Open, Type.CityBike, 2000));
+        vehicleService.AddVehicle(new Vehicle(2, Status.ReadyForPickUp, Type.MountainBike, 20056));
 
         // Start up user service
         UserService userService = new UserService();
-        userService.AddUser(new Staff());
-        userService.AddUser(new Customer());
+        userService.AddUser(new Staff(1, "Hans Staff"));
+        userService.AddUser(new Customer(2, "Karl Kunde"));
 
-        System.out.println("I have " + vehicleService.getVehicles().size() + " currently in the shop");
+        // Print some basic infos
+        System.out.println("I have " + vehicleService.getVehicles().size() + " vehicle/s currently in the shop");
+        System.out.println("I have " + userService.getAllCustomers().size() + " customer/s currently in the shop");
+        System.out.println("I have " + userService.getAllStaff().size() + " staff currently in the shop");
+
+        // Reserve a vehicle
+        StorageService storageService = new StorageService(vehicleService, userService);
+        storageService.reserveVehicle((Customer)userService.findUserById(2), null);
    }
 }
