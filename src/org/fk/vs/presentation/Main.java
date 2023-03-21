@@ -5,6 +5,7 @@ import java.util.List;
 import org.fk.vs.business.StorageService;
 import org.fk.vs.business.UserService;
 import org.fk.vs.business.VehicleService;
+import org.fk.vs.data.Bike;
 import org.fk.vs.data.Customer;
 import org.fk.vs.data.Staff;
 import org.fk.vs.data.Status;
@@ -18,8 +19,8 @@ public class Main {
 
         // Start up vehicle service
         VehicleService vehicleService = new VehicleService();
-        vehicleService.AddVehicle(new Vehicle(1, Status.Open, Type.CityBike, 2000));
-        vehicleService.AddVehicle(new Vehicle(2, Status.ReadyForPickUp, Type.MountainBike, 20056));
+        vehicleService.AddVehicle(new Bike(1, Status.Open, Type.CityBike, 2000));
+        vehicleService.AddVehicle(new Bike(2, Status.ReadyForPickUp, Type.MountainBike, 20056));
 
         // Start up user service
         UserService userService = new UserService();
@@ -37,7 +38,7 @@ public class Main {
         List<Vehicle> vehicles = storageService.getReservedVehicles();
 
         for (Vehicle item : vehicles) {
-            System.out.println("Vehicle: " + item.getId());
+            System.out.println(item.print());
         }
 
         // Display some users
