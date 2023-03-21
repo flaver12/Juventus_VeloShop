@@ -10,6 +10,8 @@ public abstract class User {
         this.id = id;
     }
 
+    public abstract String format();
+
     public int getId() {
         return id;
     }
@@ -29,6 +31,4 @@ public abstract class User {
     public void setName(String name) {
         this.name = name;
     }
-
-    public abstract String format();
 }
