@@ -1,6 +1,6 @@
 package org.fk.vs.data;
 
-public class User {
+public abstract class User {
     private String name;
     private String role;
     private int id;
@@ -29,4 +29,6 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
+
+    public abstract String format();
 }

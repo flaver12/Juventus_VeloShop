@@ -9,6 +9,7 @@ import org.fk.vs.data.Customer;
 import org.fk.vs.data.Staff;
 import org.fk.vs.data.Status;
 import org.fk.vs.data.Type;
+import org.fk.vs.data.User;
 import org.fk.vs.data.Vehicle;
 
 public class Main {
@@ -37,6 +38,11 @@ public class Main {
 
         for (Vehicle item : vehicles) {
             System.out.println("Vehicle: " + item.getId());
+        }
+
+        // Display some users
+        for (User user : userService.getAllUser()) {
+            System.out.println(user.format());
         }
    }
 }

@@ -13,5 +13,10 @@ private String shop;
 
     public void setShop(String shop) {
         this.shop = shop;
+    }
+
+    @Override
+    public String format() {
+        return getName() + " is a staff member";
     } 
 }

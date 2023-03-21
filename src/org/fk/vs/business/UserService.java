@@ -20,6 +20,10 @@ public class UserService {
         this.users.add(user);
     }
 
+    public Collection<User> getAllUser() {
+        return users;
+    }
+
     public List<User> getAllCustomers() {
         Predicate<User> streamPredicate = item -> item instanceof Customer;
         return this.users.stream().filter(streamPredicate).toList();

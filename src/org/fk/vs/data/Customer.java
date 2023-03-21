@@ -23,4 +23,9 @@ public class Customer extends User {
 
         this.vehicles.add(vehicle);
     }
+
+    @Override
+    public String format() {
+        return getName() + " is a Customer";
+    }
 }
