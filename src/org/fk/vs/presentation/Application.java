@@ -5,6 +5,7 @@ import java.util.Map.Entry;
 
 import org.fk.vs.business.StorageService;
 import org.fk.vs.business.UserService;
+import org.fk.vs.business.VehicleFactory;
 import org.fk.vs.business.VehicleService;
 import org.fk.vs.data.enums.Status;
 import org.fk.vs.data.enums.Type;
@@ -35,6 +36,17 @@ public class Application {
 
 	// Print out some basic infos
 	System.out.println("I have " + vehicleService.getVehicles().size() + " vehicle/s currently in the shop");
+
+	// Print out all vehicles
+	System.out.println("==========");
+	System.out.println("Print out all vehicles that we have in the store");
+
+	for (Vehicle vehicle : vehicleService.getVehicles()) {
+	   System.out.println(vehicle.print());
+	}
+
+	System.out.println("==========");
+
         System.out.println("I have " + userService.getAllCustomers().size() + " customer/s currently in the shop");
         System.out.println("I have " + userService.getAllStaff().size() + " staff currently in the shop");
 
@@ -46,8 +58,23 @@ public class Application {
     }
 
     private void setupVehicleService() {
-	vehicleService.AddVehicle(new Bike(1, Status.Open, Type.CityBike, 2000));
-        vehicleService.AddVehicle(new Bike(2, Status.ReadyForPickUp, Type.MountainBike, 20056));
+	vehicleService.AddVehicle(
+	   VehicleFactory
+	       .getInstance()
+	       .createVehicle(
+		    Type.CityBike,
+		    3000
+		)
+	);
+
+        vehicleService.AddVehicle(
+	    VehicleFactory
+		.getInstance()
+		.createVehicle(
+		    Type.EBike,
+		    2345
+		)
+	);
     }
 
     private void setupUserService() {
