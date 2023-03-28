@@ -1,6 +1,5 @@
 package org.fk.vs.business;
 
-
 import org.fk.vs.data.enums.Status;
 import org.fk.vs.data.enums.Type;
 import org.fk.vs.data.interfaces.Vehicle;
@@ -16,9 +15,11 @@ public class VehicleFactory {
    }
 
    public static VehicleFactory getInstance() {
-      if(instance != null) {
+      if(instance != null) { // If we have an instance then just return the instance
 	  return instance;
       }
+
+      // Well we have not, so lets create one
       instance = new VehicleFactory();
       return instance;
    }
