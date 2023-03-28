@@ -3,7 +3,7 @@ package org.fk.vs.business;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.fk.vs.data.Vehicle;
+import org.fk.vs.data.interfaces.Vehicle;
 
 public class VehicleService {
     

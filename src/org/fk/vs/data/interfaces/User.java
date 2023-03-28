@@ -1,4 +1,4 @@
-package org.fk.vs.data;
+package org.fk.vs.data.interfaces;
 
 public interface User {
     public String format();

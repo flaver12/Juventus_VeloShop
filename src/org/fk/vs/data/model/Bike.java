@@ -1,4 +1,8 @@
-package org.fk.vs.data;
+package org.fk.vs.data.model;
+
+import org.fk.vs.data.AbstractVehicle;
+import org.fk.vs.data.enums.Status;
+import org.fk.vs.data.enums.Type;
 
 public class Bike extends AbstractVehicle{
 

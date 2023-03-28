@@ -1,4 +1,6 @@
-package org.fk.vs.data;
+package org.fk.vs.data.model;
+
+import org.fk.vs.data.AbstractUser;
 
 public class Staff extends AbstractUser {
 

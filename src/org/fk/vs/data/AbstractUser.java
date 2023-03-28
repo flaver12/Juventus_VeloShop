@@ -1,5 +1,7 @@
 package org.fk.vs.data;
 
+import org.fk.vs.data.interfaces.User;
+
 public abstract class AbstractUser implements User {
    private String name;
     private String role;

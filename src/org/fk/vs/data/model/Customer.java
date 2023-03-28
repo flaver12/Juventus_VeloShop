@@ -1,7 +1,10 @@
-package org.fk.vs.data;
+package org.fk.vs.data.model;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import org.fk.vs.data.AbstractUser;
+import org.fk.vs.data.interfaces.Vehicle;
 
 public class Customer extends AbstractUser {
 

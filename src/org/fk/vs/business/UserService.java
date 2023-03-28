@@ -5,9 +5,9 @@ import java.util.Collection;
 import java.util.List;
 import java.util.function.Predicate;
 
-import org.fk.vs.data.Customer;
-import org.fk.vs.data.Staff;
-import org.fk.vs.data.User;
+import org.fk.vs.data.interfaces.User;
+import org.fk.vs.data.model.Customer;
+import org.fk.vs.data.model.Staff;
 
 public class UserService {
     

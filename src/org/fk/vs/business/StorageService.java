@@ -5,9 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map.Entry;
 
-import org.fk.vs.data.Status;
-import org.fk.vs.data.User;
-import org.fk.vs.data.Vehicle;
+import org.fk.vs.data.enums.Status;
+import org.fk.vs.data.interfaces.User;
+import org.fk.vs.data.interfaces.Vehicle;
 
 public class StorageService {
     private HashMap<Integer, Vehicle> vehicleList = new HashMap<Integer, Vehicle>();

@@ -5,13 +5,14 @@ import java.util.List;
 import org.fk.vs.business.StorageService;
 import org.fk.vs.business.UserService;
 import org.fk.vs.business.VehicleService;
-import org.fk.vs.data.Bike;
-import org.fk.vs.data.Customer;
-import org.fk.vs.data.Staff;
-import org.fk.vs.data.Status;
-import org.fk.vs.data.Type;
-import org.fk.vs.data.User;
-import org.fk.vs.data.Vehicle;
+import org.fk.vs.data.enums.Status;
+import org.fk.vs.data.enums.Type;
+import org.fk.vs.data.interfaces.User;
+import org.fk.vs.data.interfaces.Vehicle;
+import org.fk.vs.data.model.Bike;
+import org.fk.vs.data.model.Customer;
+import org.fk.vs.data.model.Staff;
+
 import java.util.Map.Entry;
 
 public class Main {
@@ -43,7 +44,7 @@ public class Main {
         System.out.println("I have this vehicles reserved");
         for (Entry<Integer, Vehicle> item : reservedVehicles) {
             System.out.println(item.getValue().print());
-            User reservedBy = userService.findUserById(item.getKey());
+            User reservedBy = userService.findUserById(item.getKey()); // TODO can be improved, just use the user as a key
             System.out.println("Is reserved by:");
             System.out.println(reservedBy.format());
         }

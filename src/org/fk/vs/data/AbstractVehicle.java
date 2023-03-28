@@ -1,5 +1,9 @@
 package org.fk.vs.data;
 
+import org.fk.vs.data.enums.Status;
+import org.fk.vs.data.enums.Type;
+import org.fk.vs.data.interfaces.Vehicle;
+
 public abstract class AbstractVehicle implements Vehicle {
     private Status status;
     private Type type;
