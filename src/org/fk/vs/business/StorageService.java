@@ -5,8 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map.Entry;
 
-import org.fk.vs.data.Customer;
 import org.fk.vs.data.Status;
+import org.fk.vs.data.User;
 import org.fk.vs.data.Vehicle;
 
 public class StorageService {
@@ -19,27 +19,19 @@ public class StorageService {
         this.vehicleService = vehicleService;
     }
 
-    public void reserveVehicle(Customer customer, Vehicle vehicle) {
+    public void reserveVehicle(User user, Vehicle vehicle) {
         // Do we have this?
         if (!vehicleService.doesVehicleExist(vehicle)) {
             return; // Do nothing
         }
 
         vehicle.setStatus(Status.Reserved);
-        vehicleList.put(vehicle.getId(), vehicle);
+        vehicleList.put(user.getId(), vehicle);
     }
 
-    public List<Vehicle> getReservedVehicles()
+    public List<Entry<Integer, Vehicle>> getReservedVehicles()
     {
         List<Entry<Integer, Vehicle>> resultList = vehicleList.entrySet().stream().filter(item -> item.getValue().getStatus() == Status.Reserved).toList();
-        List<Vehicle> reservedList = new ArrayList<>();
-        
-        // TODO check for empty values
-
-        for (Entry<Integer,Vehicle> entry : resultList) {
-            reservedList.add(entry.getValue());    
-        }
-
-        return reservedList;
+        return resultList;
     }
 }

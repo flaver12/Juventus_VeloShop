@@ -1,6 +1,6 @@
 package org.fk.vs.data;
 
-public class Staff extends User {
+public class Staff extends AbstractUser {
 
    private String shop;
 

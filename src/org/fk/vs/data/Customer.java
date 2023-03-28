@@ -3,7 +3,7 @@ package org.fk.vs.data;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Customer extends User {
+public class Customer extends AbstractUser {
 
     public Customer(int id, String name) {
         super(id, name);

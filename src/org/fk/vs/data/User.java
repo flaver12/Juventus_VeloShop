@@ -1,34 +1,10 @@
 package org.fk.vs.data;
 
-public abstract class User {
-    private String name;
-    private String role;
-    private int id;
-
-    public User(int id, String name) {
-        this.name = name;
-        this.id = id;
-    }
-
-    public abstract String format();
-
-    public int getId() {
-        return id;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+public interface User {
+    public String format();
+    public int getId();
+    public String getRole();
+    public void setRole(String role);
+    public String getName();
+    public void setName(String name);
 }

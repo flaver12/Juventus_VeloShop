@@ -12,6 +12,7 @@ import org.fk.vs.data.Status;
 import org.fk.vs.data.Type;
 import org.fk.vs.data.User;
 import org.fk.vs.data.Vehicle;
+import java.util.Map.Entry;
 
 public class Main {
    public static void main(String[] args) {
@@ -32,15 +33,22 @@ public class Main {
         System.out.println("I have " + userService.getAllCustomers().size() + " customer/s currently in the shop");
         System.out.println("I have " + userService.getAllStaff().size() + " staff currently in the shop");
 
+        System.out.println("==========");
         // Reserve a vehicle
         StorageService storageService = new StorageService(vehicleService, userService);
-        storageService.reserveVehicle((Customer)userService.findUserById(2), vehicleService.findVehicleById(1));
-        List<Vehicle> vehicles = storageService.getReservedVehicles();
+        storageService.reserveVehicle(userService.findUserById(2), vehicleService.findVehicleById(1));
+        List<Entry<Integer, Vehicle>> reservedVehicles = storageService.getReservedVehicles();
 
-        for (Vehicle item : vehicles) {
-            System.out.println(item.print());
+        // Print out all reserved vehicles
+        System.out.println("I have this vehicles reserved");
+        for (Entry<Integer, Vehicle> item : reservedVehicles) {
+            System.out.println(item.getValue().print());
+            User reservedBy = userService.findUserById(item.getKey());
+            System.out.println("Is reserved by:");
+            System.out.println(reservedBy.format());
         }
 
+        System.out.println("==========");
         // Display some users
         for (User user : userService.getAllUser()) {
             System.out.println(user.format());
