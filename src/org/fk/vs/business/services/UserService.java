@@ -1,4 +1,4 @@
-package org.fk.vs.business;
+package org.fk.vs.business.services;
 
 import java.util.ArrayList;
 import java.util.Collection;
