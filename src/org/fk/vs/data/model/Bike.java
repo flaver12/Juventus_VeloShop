@@ -3,9 +3,8 @@ package org.fk.vs.data.model;
 import org.fk.vs.data.AbstractVehicle;
 import org.fk.vs.data.enums.Status;
 import org.fk.vs.data.enums.Type;
-import org.fk.vs.data.interfaces.Vehicle;
-import org.fk.vs.data.interfaces.VehicleDao;
-import org.fk.vs.data.mock.VehicleDaoMock;
+import org.fk.vs.data.interfaces.VehicleEntity;
+import org.fk.vs.data.mock.VehicleEntityMock;
 
 public class Bike extends AbstractVehicle{
 
@@ -19,8 +18,8 @@ public class Bike extends AbstractVehicle{
 	}
 
 	@Override
-	public VehicleDao toDao() {
-		VehicleDaoMock vehicleDaoMock = new VehicleDaoMock();
+	public VehicleEntity toDao() {
+		VehicleEntityMock vehicleDaoMock = new VehicleEntityMock();
 		vehicleDaoMock.setPrice(this.getPrice());
 		vehicleDaoMock.setType(this.getType());
 		vehicleDaoMock.setStatus(this.getStatus());
