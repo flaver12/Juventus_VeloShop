@@ -1,5 +1,6 @@
 package org.fk.vs.presentation;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map.Entry;
 
@@ -41,6 +42,15 @@ public class Application {
 
 		for (Vehicle vehicle : vehicleService.getVehicles()) {
 			System.out.println(vehicle.print());
+		}
+		
+		System.out.println("==========");
+		System.out.println("Make the loop with a iterator");
+
+		// Do the same with a iterator
+		Iterator<Vehicle> listIterator = vehicleService.getVehicles().iterator();
+		while (listIterator.hasNext()) {
+			System.out.println(listIterator.next().print());
 		}
 
 		System.out.println("==========");
