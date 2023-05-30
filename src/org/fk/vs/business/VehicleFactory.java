@@ -25,6 +25,7 @@ public class VehicleFactory {
    }
 
    public Vehicle createVehicle(Type type, int price) {
-	return new Bike(idCounter ++, Status.Open, type, price);
+	idCounter = idCounter + 1;
+	return new Bike(idCounter, Status.Open, type, price);
    }
 }
