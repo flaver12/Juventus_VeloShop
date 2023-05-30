@@ -1,5 +1,7 @@
 package org.fk.vs.data;
 
+import java.util.Objects;
+
 import org.fk.vs.data.enums.Status;
 import org.fk.vs.data.enums.Type;
 import org.fk.vs.data.interfaces.Vehicle;
@@ -39,5 +41,21 @@ public abstract class AbstractVehicle implements Vehicle {
 
     public void setStatus(Status status) {
         this.status = status;
-    }	
+    }
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(this);
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+        if (o == null) return false;
+        if (this.getClass() != o.getClass()) return false;
+
+		Vehicle vehicle = (Vehicle) o;
+
+		return id == vehicle.getId();
+	}
 }
