@@ -45,7 +45,7 @@ public abstract class AbstractVehicle implements Vehicle {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(this);
+		return Objects.hash(this.id, this.price, this.type);
 	}
 
 	@Override
