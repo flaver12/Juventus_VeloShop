@@ -25,7 +25,7 @@ public class VehicleService {
         this.vehicles.remove(vehicle);
     }
 
-    public Collection<Vehicle> getVehicles() {
+    public List<Vehicle> getVehicles() {
         return vehicleRepository.findAll();
     }
 

@@ -6,7 +6,7 @@ import org.fk.vs.data.enums.Status;
 import org.fk.vs.data.enums.Type;
 import org.fk.vs.data.interfaces.Vehicle;
 
-public abstract class AbstractVehicle implements Vehicle {
+public abstract class AbstractVehicle implements Vehicle, Comparable<Vehicle> {
     private Status status;
     private Type type;
     private int price;
@@ -56,6 +56,11 @@ public abstract class AbstractVehicle implements Vehicle {
 
 		Vehicle vehicle = (Vehicle) o;
 
-		return id == vehicle.getId();
+		return id == vehicle.getId() && price == vehicle.getPrice();
+	}
+
+	@Override
+	public int compareTo(Vehicle vehicle) {
+		return vehicle.getId() > this.getId() ? 1 : -1;
 	}
 }

@@ -2,6 +2,7 @@ package org.fk.vs.data.repository;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import org.fk.vs.data.interfaces.Vehicle;
 import org.fk.vs.data.interfaces.VehicleEntity;
@@ -22,8 +23,8 @@ public class VehicleRepository {
 		return vehicles.stream().filter(item -> item.getId() == id).toList().get(0); // TODO
 	}
 
-	public Collection<Vehicle> findAll() {
-		Collection<Vehicle> result = new ArrayList<Vehicle>();
+	public List<Vehicle> findAll() {
+		List<Vehicle> result = new ArrayList<Vehicle>();
 		for (VehicleEntity vehicle : this.vehicles) {
 			result.add(vehicle.toVehicle());
 		}

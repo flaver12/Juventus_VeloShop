@@ -3,7 +3,7 @@ package org.fk.vs.data.interfaces;
 import org.fk.vs.data.enums.Status;
 import org.fk.vs.data.enums.Type;
 
-public interface Vehicle {
+public interface Vehicle extends Comparable<Vehicle> {
     public int getPrice();
     public int getId();
     public Type getType();
